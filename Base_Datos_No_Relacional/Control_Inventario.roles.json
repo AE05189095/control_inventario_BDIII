@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "67d22fc843e45e7f9ce39c6f"
+  },
+  "id_rol": 1,
+  "nombre_rol": "Administrador",
+  "permisos": [
+    "gestionar_productos",
+    "ver_reportes",
+    "administrar_usuarios"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67d22fc843e45e7f9ce39c70"
+  },
+  "id_rol": 2,
+  "nombre_rol": "Bodega",
+  "permisos": [
+    "gestionar_productos",
+    "ver_reportes",
+    "administrar_usuarios"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67d22fc843e45e7f9ce39c71"
+  },
+  "id_rol": 3,
+  "nombre_rol": "Ventas",
+  "permisos": [
+    "ver_reportes"
+  ]
+}]

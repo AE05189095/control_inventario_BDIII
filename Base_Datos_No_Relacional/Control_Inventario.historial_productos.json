@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "67d22f4343e45e7f9ce39c69"
+  },
+  "id_producto": "01500007007",
+  "id_usuario": 1,
+  "fecha_modificacion": {
+    "$date": "2024-03-13T15:45:00.000Z"
+  },
+  "cambios": {
+    "precio_unitario": {
+      "anterior": 22.99,
+      "nuevo": 25
+    },
+    "stock_disponible": {
+      "anterior": 20,
+      "nuevo": 100
+    }
+  }
+}]
