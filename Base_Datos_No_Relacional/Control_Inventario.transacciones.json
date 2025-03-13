@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "67d22ef643e45e7f9ce39c66"
+  },
+  "id_producto": "012345678905",
+  "id_usuario": 1,
+  "cantidad": 2,
+  "tipo": "Venta",
+  "fecha": {
+    "$date": "2024-03-13T10:30:00.000Z"
+  }
+}]

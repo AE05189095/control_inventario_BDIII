@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "67d22cc543e45e7f9ce39c5a"
+  },
+  "codigo_producto": "01500007007",
+  "nombre": "Gerber Baby Food Stage 1",
+  "descripcion": "Cereal Rice.",
+  "precio_unitario": 25,
+  "stock_disponible": 100,
+  "ubicacion": {
+    "id_almacen": 1,
+    "nombre_almacen": "Almacén Central",
+    "id_ubicacion": 101,
+    "nombre_ubicacion": "Departamento Alimentos"
+  }
+},
+{
+  "_id": {
+    "$oid": "67d22cc543e45e7f9ce39c5b"
+  },
+  "codigo_producto": "015000070014",
+  "nombre": "Single Grain Cereal",
+  "descripcion": "Oatmeal Cereal.",
+  "precio_unitario": 25,
+  "stock_disponible": 90,
+  "ubicacion": {
+    "id_almacen": 1,
+    "nombre_almacen": "Almacén Central",
+    "id_ubicacion": 101,
+    "nombre_ubicacion": "Departamento Alimentos"
+  }
+},
+{
+  "_id": {
+    "$oid": "67d22cc543e45e7f9ce39c5c"
+  },
+  "codigo_producto": "015000074517",
+  "nombre": "Gerber 2nd Foods Organic",
+  "descripcion": "Fruit & Grain Banana.",
+  "precio_unitario": 350,
+  "stock_disponible": 250,
+  "ubicacion": {
+    "id_almacen": 1,
+    "nombre_almacen": "Almacén Central",
+    "id_ubicacion": 101,
+    "nombre_ubicacion": "Departamento Alimentos"
+  }
+},
+{
+  "_id": {
+    "$oid": "67d22cc543e45e7f9ce39c5d"
+  },
+  "codigo_producto": "01500076429",
+  "nombre": "Gerber Stage Food 2",
+  "descripcion": "Banana Apple Pear Puree.",
+  "precio_unitario": 12.5,
+  "stock_disponible": 40,
+  "ubicacion": {
+    "id_almacen": 1,
+    "nombre_almacen": "Almacén Central",
+    "id_ubicacion": 101,
+    "nombre_ubicacion": "Departamento Alimentos"
+  }
+}]
