@@ -1,0 +1,120 @@
+*** 3. Implementación en MongoDB ***
+
+3.1 Configuración de la Base de Datos
+
+use InventarioDB;
+db.createCollection("HistorialProductos");
+db.createCollection("Transacciones");
+
+3.2 Registro de Transacciones Simuladas
+
+db.Transacciones.insertOne({
+    producto_id: 1,
+    cantidad: 5,
+    fecha: new Date(),
+    valor_total: 250.00
+});
+
+3.3 Registro de Modificaciones en Productos
+
+db.HistorialProductos.insertOne({
+    producto_id: 1,
+    cambio: "Actualización de precio",
+    valor_anterior: 50.00,
+    valor_nuevo: 55.00,
+    fecha: new Date()
+});
+
+
+
+***BACKEMND EXPRESS MONGO***
+
+
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// Conectar a MongoDB Atlas
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log("MongoDB conectado"))
+  .catch(err => console.error("Error al conectar a MongoDB", err));
+
+// Definir modelos con Mongoose
+const ProductoSchema = new mongoose.Schema({
+    nombre: String,
+    precio: Number,
+    stock: Number
+});
+const Producto = mongoose.model('Producto', ProductoSchema);
+
+const UsuarioSchema = new mongoose.Schema({
+    nombre: String,
+    email: String,
+    rol: String
+});
+const Usuario = mongoose.model('Usuario', UsuarioSchema);
+
+// Endpoints para productos
+app.post('/productos', async (req, res) => {
+    try {
+        const producto = new Producto(req.body);
+        await producto.save();
+        res.status(201).json(producto);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al registrar el producto' });
+    }
+});
+
+app.put('/productos/:id', async (req, res) => {
+    try {
+        const producto = await Producto.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(producto);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al actualizar el producto' });
+    }
+});
+
+app.delete('/productos/:id', async (req, res) => {
+    try {
+        await Producto.findByIdAndDelete(req.params.id);
+        res.json({ mensaje: 'Producto eliminado' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al eliminar el producto' });
+    }
+});
+
+// Endpoints para usuarios
+app.post('/usuarios', async (req, res) => {
+    try {
+        const usuario = new Usuario(req.body);
+        await usuario.save();
+        res.status(201).json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al registrar el usuario' });
+    }
+});
+
+app.get('/reportes', async (req, res) => {
+    try {
+        const productos = await Producto.find();
+        const usuarios = await Usuario.find();
+        res.json({ productos, usuarios });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener reportes' });
+    }
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+
+
+
+Documentación (IA): Este código establece el backend con Express.js y MongoDB, permitiendo registrar, actualizar y eliminar productos y usuarios. También incluye un endpoint para reportes. Déjame saber si necesitas integración con MySQL o autenticación de usuarios.
